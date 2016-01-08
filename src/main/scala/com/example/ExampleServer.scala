@@ -22,6 +22,7 @@ class ExampleServer extends HttpServer {
       .filter[LoggingMDCFilter[Request, Response]]
       .filter[TraceIdMDCFilter[Request, Response]]
       .filter[CommonFilters]
+      .filter(new DoiEncodingFilter)
       .add(pingController)
   }
 
